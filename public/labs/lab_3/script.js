@@ -16,7 +16,7 @@ function styleList() {
 }
 
 function goToRight() {
-    var current = listImageArea.querySelector(".curr-list-image");
+    let current = listImageArea.querySelector(".curr-list-image");
     current.parentElement.nextElementSibling.children[0].classList.add(
         "curr-list-image"
     );
@@ -31,7 +31,7 @@ function goToRight() {
 }
 
 function goToLeft() {
-    var current = listImageArea.querySelector(".curr-list-image");
+    let current = listImageArea.querySelector(".curr-list-image");
     current.parentElement.previousElementSibling.children[0].classList.add(
         "curr-list-image"
     );
