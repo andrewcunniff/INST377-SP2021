@@ -9,7 +9,7 @@ body {
 }
 
 .carousel-container {
-    width: auto;
+    width: 400px;
     height: auto;
     margin: 0 auto;
     position: relative;

@@ -1,6 +1,6 @@
 /* Put your javascript in here */
 "use strict"
-const carouselContainer = document.querySelector(".carousel-container")
+const carouselContainer = document.querySelector(".carousel-container");
 const listImageArea = carouselContainer.querySelector(".next-list");
 const listOfImages = listImageArea.querySelectorAll("img");
 const currentImage = carouselContainer.querySelector(".current-image");
