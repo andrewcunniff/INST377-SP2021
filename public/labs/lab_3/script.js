@@ -1,76 +1,38 @@
-/* Put your javascript in here */
-"use strict"
-const carouselContainer = document.querySelector(".carousel-container");
-const listImageArea = carouselContainer.querySelector(".next-list");
-const listOfImages = listImageArea.querySelectorAll("img");
-const currentImage = carouselContainer.querySelector(".current-image");
-const arrowLeft = carouselContainer.querySelector(".left-arrow");
-const arrowRight = carouselContainer.querySelector(".right-arrow");
 
-function styleList() {
-    if (listImageArea.scrollWidth == listImageArea.offsetWidth) {
-        listImageArea.style.justifyContent = "center";
-    } else {
-        listImageArea.style.justifyContent = "flex-start";
+/* Setting the default slide start index: */
+let slideIndex = 1;
+/* We call the function that is implemented below: */
+showSlides(slideIndex);
+/* Increase the index by 1 - show the next slide: */
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+/* Decrease the index by 1 - show the previous slide: */
+function previousSlide() {
+    showSlides(slideIndex -= 1);  
+}
+/* Set the current slide: */
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+/* Flip function: */
+function showSlides(n) {
+    let i;
+    /* We refer to the elements with the class name "item", that is, to the pictures: */
+    let slides = document.getElementsByClassName("item");
+    
+    /* Checking the number of slides: */
+    if (n > slides.length) {
+      slideIndex = 1
     }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+  
+    /* Loop through each slide in a for loop: */
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }
+    /* Making an element block: */
+    slides[slideIndex - 1].style.display = "block";    
 }
-
-function goToRight() {
-    let current = listImageArea.querySelector(".curr-list-image");
-    current.parentElement.nextElementSibling.children[0].classList.add(
-        "curr-list-image"
-    );
-    current.classList.remove("curr-list-image");
-    current = listImageArea.querySelector(".curr-list-image");
-    listImageArea.scrollLeft = current.offsetLeft;
-    currentImage.attributes.src.value = current.attributes.src.value;
-    currentImage.classList.add("slideInFromRight");
-    setTimeout(() => {
-        currentImage.classList.remove("slideInFromRight");
-    }, 500);
-}
-
-function goToLeft() {
-    let current = listImageArea.querySelector(".curr-list-image");
-    current.parentElement.previousElementSibling.children[0].classList.add(
-        "curr-list-image"
-    );
-    current.classList.remove("curr-list-image");
-    current = listImageArea.querySelector(".curr-list-image");
-    listImageArea.scrollLeft = current.offsetLeft;
-    currentImage.attributes.src.value = current.attributes.src.value;
-    currentImage.classList.add("slideInFromLeft");
-    setTimeout(() => {
-        currentImage.classList.remove("slideInFromLeft");
-    }, 500);
-}
-
-function changeCurrentImage(newImage) {
-    currentImage.classList.add("fadeIn");
-    setTimeout(() => {
-        currentImage.classList.remove("fadeIn");
-    }, 500);
-    currentImage.attributes.src.value = this.attributes.src.value;
-    listOfImages.forEach((image) => {
-        image.classList.remove("curr-list-image");
-    });
-    this.classList.add("curr-list-image");
-}
-
-styleList();
-
-arrowLeft.addEventListener("click", goToLeft);
-arrowRight.addEventListener("click", goToRight);
-
-window.addEventListener("resize", (e) => {
-    styleList();
-});
-
-(function() {
-    if (typeof NodeList.prototype.forEach === "function") return false;
-    NodeList.prototype.forEach = Array.prototype.forEach;
-})();
-
-listOfImages.forEach((image) => {
-    image.addEventListener("click", changeCurrentImage);
-});

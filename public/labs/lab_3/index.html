@@ -14,30 +14,16 @@
     </head>
     <script src="script.js"></script>
     <body>
-        <section class="carousel-container">
-            <img src="images/onigiri_1.png" alt="mochi#1" class="current-image">
-            <span class="arrow left-arrow">Previous</span>
-            <ul class = "next-list">
-                <li>
-                    <img src="images/onigiri_2.png" alt="mochi#2" class="list-image curr-list-image">
-                </li>
-                <li>
-                    <img src="images/onigiri_3.png" alt="mochi#3" class="list-image">
-                </li>
-                <li>
-                    <img src="images/onigiri_4.png" alt="mochi#4" class="list-image">
-                </li>
-                <li>
-                    <img src="images/roll_1.png" alt="sushi#1" class="list-image">
-                </li>
-                <li>
-                    <img src="images/roll_2.png" alt="sushi#2" class="list-image">
-                </li>    
-                <li>
-                    <img src="images/roll_3.png" alt="sushi#3" class="list-image">
-                </li>    
-            </ul>
-            <span class="arrow right-arrow">Next</span>
-        </section>
+        <div class="slider">
+            <img src="images/onigiri_1.png" alt="mochi#1" class="item">
+            <img src="images/onigiri_2.png" alt="mochi#2" class="item">
+            <img src="images/onigiri_3.png" alt="mochi#3" class="item">
+            <img src="images/onigiri_4.png" alt="mochi#4" class="item">
+            <img src="images/roll_1.png" alt="sushi#1" class="item">
+            <img src="images/roll_2.png" alt="sushi#2" class="item">
+            <img src="images/roll_3.png" alt="sushi#3" class="item">
+            <a class="previous" onclick="previousSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
     </body>
 </html>

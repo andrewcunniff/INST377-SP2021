@@ -1,135 +1,58 @@
-/* Add some css styles based on the tutorial at javascript.info: introduction to browser events
- https://javascript.info/introduction-browser-events */
-
-body {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #201c1c;
-    background-color: rgb(177, 29, 29);
-}
-
-.carousel-container {
-    width: 400px;
-    height: auto;
-    margin: 0 auto;
+/* The slider: */
+.slider{
+    max-width: 90%;
+    /* The position of the element is set relative to its original position: */
     position: relative;
-    overflow: hidden;
+    /* Center horizontally: */
+    margin: auto;
+    height: 300px;
 }
-
-.next-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+/* The picture is scaled in relation to the parent element: */
+.slider .item img {
+    /* The element is resized to fill the block and maintain proportions: */
+    object-fit: cover;
     width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    transition: all 0.5s;
+    height: 300px;
 }
-
-.next-list li {
-    display: inline-block;
-    padding: 0;
-    height: 64px;
-    margin: 0 1px;
-    text-align: center;
+/* Back and forward buttons: */
+.slider .previous, .slider .next {
+    /* Adds an icon to the cursor when it is over the button: */
     cursor: pointer;
-    transition: all 0.5s;
-}
-
-.current-image {
-    border-radius: 3px;
-    width: 100%;
-    height: auto;
-}
-
-.list-image {
-    width: auto;
-    height: 100%;
-    opacity: 0.5;
-    border-radius: 3px;
-    transition: all 0.5s;
-}
-
-.curr-list-image {
-    opacity: 1;
-    transition: all 0.5s;
-}
-
-.arrow {
-    display: flex;
+    /* The position of the element is set relative to the borders of the browser: */
     position: absolute;
-    width: 50px;
-    height: 100px;
-    bottom: 10px;
-    flex: 1;
-    text-align: center;
-    line-height: 50px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    /* Styling the buttons themselves: */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    /* Background fading on hover: */
+    transition: 0.6s ease;
+    /* Rounding the borders: */
+    border-radius: 0 3px 3px 0;
 }
-
-.left-arrow {
-    left: 10px;
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
-.right-arrow {
-    right: 10px;
+/* When you hover over the buttons, add the background of the buttons: */
+.slider .previous:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
-
-/*
- * Animations
- */
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
+/* Slide animation: */
+.slider .item {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    /* Set and change the transparency: */
+    from {
+        opacity: 0.4
     }
-    100% {
-        opacity: 1;
+    to {
+        opacity: 1
     }
-}
-
-@keyframes slideInFromLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-@keyframes slideInFromRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-.slideInFromLeft {
-    animation: slideInFromLeft 0.5s ease-in-out;
-}
-
-.slideInFromRight {
-    animation: slideInFromRight 0.5s ease-in-out;
-}
-
-.fadeIn {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-#swipe-box {
-    background-color: gray;
-    width: 400px;
-    height: 400px;
 }
