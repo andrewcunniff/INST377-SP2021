@@ -5,14 +5,14 @@
     position: relative;
     /* Center horizontally: */
     margin: auto;
-    height: 300px;
+    height: 100px;
 }
 /* The picture is scaled in relation to the parent element: */
 .slider .item img {
     /* The element is resized to fill the block and maintain proportions: */
     object-fit: cover;
     width: 100%;
-    height: 300px;
+    height: 100px;
 }
 /* Back and forward buttons: */
 .slider .previous, .slider .next {
