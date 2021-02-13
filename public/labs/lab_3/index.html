@@ -4,15 +4,14 @@
 <!-- Make a carousel of four mochi images that cycle, based on the readings from javascript.info -->
 <!DOCTYPE html>
 <html lang="en">
-<html>
     <head>
         <meta charset="utf-8">
         <title>
-            Lab 3 - Javascript slider
+            Andrew Cunniff Lab 3
         </title>
         <link rel='stylesheet' href='styles.css'/>
     </head>
-    
+    <script src="script.js"></script>
     <body>
         <div class="slider">
             <div class="item">
@@ -41,10 +40,10 @@
             </div>   
             <div class="item">
                 <img src="images/roll_3.png" alt="sushi#3">
-            </div>        
-            <a class="previous" onclick="previousSlide()">&#10094;</a>
-            <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div> 
+            <input id="prevButton" type="button" value="Prev" onclick="showPrev()"/>
+            <input id="nextButton" type="button" value="Next" onclick="showNext()"/>
         </div>
     </body>
-    <script src="script.js"></script>
+    
 </html>

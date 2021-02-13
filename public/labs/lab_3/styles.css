@@ -1,58 +1,39 @@
-/* The slider: */
-.slider{
+body {
+    background-color: rgb(0, 0, 0);
+}
+.slider {
     max-width: 90%;
-    /* The position of the element is set relative to its original position: */
     position: relative;
-    /* Center horizontally: */
-    margin: auto;
-    height: 100px;
+    overflow: hidden;
+    height: 150px;
+    margin: 48px auto;
 }
-/* The picture is scaled in relation to the parent element: */
-.slider .item img {
-    /* The element is resized to fill the block and maintain proportions: */
+.slider .item img{
     object-fit: cover;
-    width: 100%;
-    height: 100px;
+    width: 75%;
+    height: 150px;
 }
-/* Back and forward buttons: */
-.slider .previous, .slider .next {
-    /* Adds an icon to the cursor when it is over the button: */
+#nextButton, #prevButton {
     cursor: pointer;
-    /* The position of the element is set relative to the borders of the browser: */
     position: absolute;
     top: 50%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    /* Styling the buttons themselves: */
     color: white;
     font-weight: bold;
     font-size: 16px;
-    /* Background fading on hover: */
     transition: 0.6s ease;
-    /* Rounding the borders: */
     border-radius: 0 3px 3px 0;
 }
-.slider .next {
+#nextButton {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-/* When you hover over the buttons, add the background of the buttons: */
-.slider .previous:hover,
-.slider .next:hover {
+#nextButton:hover, #prevButton:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
-/* Slide animation: */
 .slider .item {
     animation-name: fade;
     animation-duration: 1.5s;
-}
-@keyframes fade {
-    /* Set and change the transparency: */
-    from {
-        opacity: 0.4
-    }
-    to {
-        opacity: 1
-    }
 }
