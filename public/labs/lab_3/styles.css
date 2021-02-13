@@ -6,15 +6,12 @@ body {
     position: relative;
     overflow: hidden;
     height: 300px;
-    margin: 48px auto;
+    margin: auto;
 }
 .slider .item img{
-    object-fit: cover;
+    text-align: center;
     width: 99px;
     height: 99px;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
 }
 #nextButton, #prevButton {
     cursor: pointer;
