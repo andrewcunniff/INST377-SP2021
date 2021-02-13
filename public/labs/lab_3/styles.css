@@ -7,7 +7,6 @@ body {
     overflow: hidden;
     height: 300px;
     margin: auto;
-    padding-top: 40%;
 }
 .slider .item img{
     padding: 100px;
