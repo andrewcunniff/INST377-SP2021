@@ -7,6 +7,9 @@ body {
     overflow: hidden;
     height: 300px;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .slider .item img{
     padding: 100px;
