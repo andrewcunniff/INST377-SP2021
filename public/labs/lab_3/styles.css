@@ -12,6 +12,9 @@ body {
     object-fit: cover;
     width: 99px;
     height: 99px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
 }
 #nextButton, #prevButton {
     cursor: pointer;
