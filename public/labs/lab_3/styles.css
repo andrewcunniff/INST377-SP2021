@@ -9,7 +9,7 @@ body {
     margin: auto;
 }
 .slider .item img{
-    text-align: center;
+    padding: 100px;
     width: 99px;
     height: 99px;
 }
