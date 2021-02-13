@@ -2,16 +2,16 @@ body {
     background-color: rgb(0, 0, 0);
 }
 .slider {
-    max-width: 90%;
+    width: 120px;
     position: relative;
     overflow: hidden;
-    height: auto;
+    height: 120px;
     margin: 48px auto;
 }
 .slider .item img{
     object-fit: cover;
-    width: 75%;
-    height: auto;
+    width: 99px;
+    height: 99px;
 }
 #nextButton, #prevButton {
     cursor: pointer;
