@@ -5,13 +5,13 @@ body {
     max-width: 90%;
     position: relative;
     overflow: hidden;
-    height: 150px;
+    height: auto;
     margin: 48px auto;
 }
 .slider .item img{
     object-fit: cover;
     width: 75%;
-    height: 150px;
+    height: auto;
 }
 #nextButton, #prevButton {
     cursor: pointer;
