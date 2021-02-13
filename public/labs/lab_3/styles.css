@@ -2,10 +2,10 @@ body {
     background-color: rgb(0, 0, 0);
 }
 .slider {
-    width: 120px;
+    width: 300px;
     position: relative;
     overflow: hidden;
-    height: 120px;
+    height: 300px;
     margin: 48px auto;
 }
 .slider .item img{
