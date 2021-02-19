@@ -1,7 +1,3 @@
-//const slideArray = []
-//for (let i = 0; i<document.querySelectorAll('.slider .item').length; i++) {
-//    slideArray.push(document.querySelectorAll('.slider .item')[i]);
-//}
 let slideIndex = 1
 showSlides(slideIndex);
 function showNext() {
