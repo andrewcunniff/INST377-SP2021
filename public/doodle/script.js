@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(leftTimerId);
   }
 
-  function control() {
+  function control(e) {
     doodler.style.bottom = doodlerBottomSpace + "px";
     if (e.key === "ArrowLeft") {
       moveLeft();
