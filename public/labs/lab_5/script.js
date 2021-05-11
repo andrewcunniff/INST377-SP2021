@@ -1,14 +1,17 @@
 function mapInit() {
-  let mymap = L.map('mapid').setView([38.9, -76.73], 8);
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
-  return mymap;
+  let map = L.map("mapid").setView([38.88, -76.8], 11);
+  L.tileLayer(
+    "https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=HoFRVfZhUhAgENkBcaCO",
+    {
+      tileSize: 512,
+      zoomOffset: -1,
+      minZoom: 1,
+      attribution:
+        '\u003ca href="https://www.maptiler.com/copyright/" target="_blank"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href="https://www.openstreetmap.org/copyright" target="_blank"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e',
+      crossOrigin: true
+    }
+  ).addTo(map);
+  return map;
 }
 
 async function dataHandler(mapObjectFromFunction) {
@@ -18,7 +21,7 @@ async function dataHandler(mapObjectFromFunction) {
   const restaurants = await request.json();
   const search = document.querySelector("#search");
   const suggestions = document.querySelector(".suggestions");
-  const button = document.querySelector("button")
+  const button = document.querySelector("button");
   function findMatches(wordToMatch, restaurants) {
     return restaurants.filter(place => {
       const regex = new RegExp(wordToMatch, "gi");
@@ -29,8 +32,10 @@ async function dataHandler(mapObjectFromFunction) {
     const matchArray = findMatches(event.target.value, restaurants);
     for (i = 0; i < 5; i++) {
       let temp = matchArray[i];
-      console.log(temp.geocoded_column_1.coordinates.reverse());
-      let marker = L.marker(temp.geocoded_column_1).addTo(mapObjectFromFunction);
+      // let lon = temp.geocoded_column_1.coordinates.reverse()[0];
+      // let lat = temp.geocoded_column_1.coordinates.reverse()[1];
+      console.log(temp.geocoded_column_1.coordinates);
+      var marker = L.marker(temp.geocoded_column_1.coordinates.reverse()).addTo(mapObjectFromFunction);
     }
     const html = matchArray
       .map(place => {
@@ -51,8 +56,8 @@ async function dataHandler(mapObjectFromFunction) {
       .join("");
     suggestions.innerHTML = html;
   }
-  console.log(search)
-  
+  console.log(search);
+
   button.addEventListener("click", async event => {
     displayMatch(event);
   });
