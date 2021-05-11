@@ -32,17 +32,27 @@
         </p>
       </div>
     </section>
+
     <div class="columns">
-      <div class="column is-one-third">
-        <form action="/api" method="post">
-          <input
-            class="input is-medium is-rounded"
-            type="text"
-            id="search"
-            name="Search"
-            placeholder="Search"
-          />
-        </form>
+      <div class="column is-two-fifths">
+        <div class="field has-addons">
+          <div class="control">
+            <form action="/api" method="post">
+              <input
+                class="input is-large is-rounded"
+                type="text"
+                id="search"
+                name="Search"
+                placeholder="Search"
+              />
+            </form>
+          </div>
+          <div class="control">
+            <button name="btn" type="submit" class="button is-link is-large">
+              Submit
+            </button>
+          </div>
+        </div>
         <ul class="suggestions"></ul>
       </div>
       <div class="column is-two-thirds">
